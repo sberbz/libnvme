@@ -770,7 +770,7 @@ const char *nvme_ctrl_get_state(nvme_ctrl_t c)
 	c->state = nvme_get_ctrl_attr(c, "state");
 	if (state)
 		free(state);
-	return c->state;
+	return c->state ? c->state : "";
 }
 
 const char *nvme_ctrl_get_numa_node(nvme_ctrl_t c)
